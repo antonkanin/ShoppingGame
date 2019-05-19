@@ -9,33 +9,24 @@ public class PlayerMovement : MonoBehaviour
 
     public Camera gameCamera;
 
+    public Joystick movementJoystick;
+    public Joystick rotationJoystick;
+
     void Update()
     {
-        HandleMovement();
-        HandleRotation();
+        // HandleMovement();
+        // HandleRotation();
+
+        HandleMovementJoystick();
+        HandleRotationJoystick();
     }
 
     void HandleMovement()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            transform.position += playerSpeed * transform.forward;
-        }
+        var shiftHorizontal = Input.GetAxis("Horizontal");
+        var shiftVertical = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.position -= playerSpeed * transform.forward;
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position += playerSpeed * transform.right;
-        }
-
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position -= playerSpeed * transform.right;
-        }
+        transform.position += playerSpeed * new Vector3(shiftHorizontal, 0.0f, shiftVertical);
     }
 
     void HandleRotation()
@@ -45,5 +36,20 @@ public class PlayerMovement : MonoBehaviour
 
         gameCamera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
         transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
+    }
+
+    void HandleMovementJoystick()
+    {
+        transform.position += 
+            playerSpeed * new Vector3(movementJoystick.Horizontal, 0.0f, movementJoystick.Vertical);
+    }
+
+    void HandleRotationJoystick()
+    {
+        var rot = gameCamera.transform.rotation;
+        
+        rot *= Quaternion.Euler(-1.0f * rotationJoystick.Vertical, rotationJoystick.Horizontal, 0.0f);
+        
+        gameCamera.transform.rotation = rot;
     }
 }
