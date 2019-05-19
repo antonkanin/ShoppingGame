@@ -55,5 +55,4 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation *=
             Quaternion.Euler(0.0f, rotationJoystick.Horizontal, 0.0f);
     }
-
 }
