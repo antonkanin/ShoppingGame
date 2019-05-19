@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,7 +13,14 @@ public class PlayerMovement : MonoBehaviour
     public Joystick movementJoystick;
     public Joystick rotationJoystick;
 
-    void Update()
+    private Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void FixedUpdate()
     {
         // HandleMovement();
         // HandleRotation();
@@ -40,9 +48,20 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleMovementJoystick()
     {
-        transform.position +=
-            playerSpeed *
-            (transform.forward * movementJoystick.Vertical + transform.right * movementJoystick.Horizontal);
+        const float ZERO_SPEED = 0.1f;
+
+        if (Math.Abs(movementJoystick.Vertical) < ZERO_SPEED &&
+            Math.Abs(movementJoystick.Horizontal) < ZERO_SPEED)
+        {
+            rb.velocity = Vector3.zero;
+        }
+        else
+        {
+            var newPlayerPos = playerSpeed * (transform.forward * movementJoystick.Vertical +
+                                              transform.right * movementJoystick.Horizontal);
+
+            rb.MovePosition(transform.position + newPlayerPos);
+        }
     }
 
     void HandleRotationJoystick()
@@ -51,8 +70,6 @@ public class PlayerMovement : MonoBehaviour
         gameCamera.transform.rotation *=
             Quaternion.Euler(-1.0f * rotationJoystick.Vertical, 0.0f, 0.0f);
 
-        // turning player (only left and right)
-        transform.rotation *=
-            Quaternion.Euler(0.0f, rotationJoystick.Horizontal, 0.0f);
+        rb.MoveRotation(transform.rotation * Quaternion.Euler(0.0f, rotationJoystick.Horizontal, 0.0f));
     }
 }
