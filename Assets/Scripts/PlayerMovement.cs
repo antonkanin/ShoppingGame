@@ -40,16 +40,20 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleMovementJoystick()
     {
-        transform.position += 
-            playerSpeed * new Vector3(movementJoystick.Horizontal, 0.0f, movementJoystick.Vertical);
+        transform.position +=
+            playerSpeed *
+            (transform.forward * movementJoystick.Vertical + transform.right * movementJoystick.Horizontal);
     }
 
     void HandleRotationJoystick()
     {
-        var rot = gameCamera.transform.rotation;
-        
-        rot *= Quaternion.Euler(-1.0f * rotationJoystick.Vertical, rotationJoystick.Horizontal, 0.0f);
-        
-        gameCamera.transform.rotation = rot;
+        // turning camera (only up and down)
+        gameCamera.transform.rotation *=
+            Quaternion.Euler(-1.0f * rotationJoystick.Vertical, 0.0f, 0.0f);
+
+        // turning player (only left and right)
+        transform.rotation *=
+            Quaternion.Euler(0.0f, rotationJoystick.Horizontal, 0.0f);
     }
+
 }
