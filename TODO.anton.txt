@@ -1,0 +1,5 @@
+- add a script to 'pickup' items from shelves
+- lock window to the landscape mode
+- fix the physics issue - player starts moving by himself when he hits the ball
+
+Done:
