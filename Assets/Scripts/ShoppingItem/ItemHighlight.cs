@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class ShoppingItem : MonoBehaviour
+public class ItemHighlight : MonoBehaviour
 {
     public float minDistanceToPlayer = 1.0f;
 
