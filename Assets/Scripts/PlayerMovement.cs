@@ -5,9 +5,6 @@ public class PlayerMovement : MonoBehaviour
 {
     private float playerSpeed = 0.1f;
 
-    private float yaw = 0.0f;
-    private float pitch = 0.0f;
-
     public Camera gameCamera;
 
     public Vector2Value rotationValue;
