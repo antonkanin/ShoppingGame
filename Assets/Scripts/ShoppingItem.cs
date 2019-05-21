@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class ShoppingItem : MonoBehaviour
 {
-    public float distanceToPlayer = 1.0f;
+    public float minDistanceToPlayer = 1.0f;
 
-    public Transform playerPosition;
+    public GameObject highlightFX;
+
+    private Transform playerPosition;
 
     private void Start()
     {
@@ -17,19 +19,27 @@ public class ShoppingItem : MonoBehaviour
         }
 
         playerPosition = player.transform;
+        
+        highlightFX.SetActive(false);
     }
 
     void Update()
     {
-        if (Vector3.Distance(playerPosition.position, transform.position) <= distanceToPlayer)
+        var distanceToPlayer = Vector3.Distance(playerPosition.position, transform.position);
+        
+        if (distanceToPlayer <= minDistanceToPlayer)
         {
-            SpotLightOn();  
+            if (!highlightFX.activeSelf)
+            {
+                highlightFX.SetActive(true);
+            }
         }
-    }
-
-    void SpotLightOn()
-    {
-        
-        
+        else
+        {
+            if (highlightFX.activeSelf)
+            {
+                highlightFX.SetActive(false);
+            }
+        }
     }
 }
