@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
 
     public Camera gameCamera;
 
-    public Joystick movementJoystick;
-    public Joystick rotationJoystick;
+    public Vector2Value rotationValue;
+    public Vector2Value movementValue;
 
     private Rigidbody rb;
 
@@ -22,43 +22,23 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // HandleMovement();
-        // HandleRotation();
-
         HandleMovementJoystick();
         HandleRotationJoystick();
-    }
-
-    void HandleMovement()
-    {
-        var shiftHorizontal = Input.GetAxis("Horizontal");
-        var shiftVertical = Input.GetAxis("Vertical");
-
-        transform.position += playerSpeed * new Vector3(shiftHorizontal, 0.0f, shiftVertical);
-    }
-
-    void HandleRotation()
-    {
-        yaw += Input.GetAxis("Mouse X");
-        pitch -= Input.GetAxis("Mouse Y");
-
-        gameCamera.transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-        transform.eulerAngles = new Vector3(0.0f, yaw, 0.0f);
     }
 
     void HandleMovementJoystick()
     {
         const float ZERO_SPEED = 0.1f;
 
-        if (Math.Abs(movementJoystick.Vertical) < ZERO_SPEED &&
-            Math.Abs(movementJoystick.Horizontal) < ZERO_SPEED)
+        if (Math.Abs(movementValue.value.x) < ZERO_SPEED &&
+            Math.Abs(movementValue.value.y) < ZERO_SPEED)
         {
             rb.velocity = Vector3.zero;
         }
         else
         {
-            var newPlayerPos = playerSpeed * (transform.forward * movementJoystick.Vertical +
-                                              transform.right * movementJoystick.Horizontal);
+            var newPlayerPos = playerSpeed * (transform.forward * movementValue.value.y +
+                                              transform.right * movementValue.value.x);
 
             rb.MovePosition(transform.position + newPlayerPos);
         }
@@ -68,8 +48,8 @@ public class PlayerMovement : MonoBehaviour
     {
         // turning camera (only up and down)
         gameCamera.transform.rotation *=
-            Quaternion.Euler(-1.0f * rotationJoystick.Vertical, 0.0f, 0.0f);
+            Quaternion.Euler(-1.0f * rotationValue.value.y, 0.0f, 0.0f);
 
-        rb.MoveRotation(transform.rotation * Quaternion.Euler(0.0f, rotationJoystick.Horizontal, 0.0f));
+        rb.MoveRotation(transform.rotation * Quaternion.Euler(0.0f, rotationValue.value.x, 0.0f));
     }
 }
