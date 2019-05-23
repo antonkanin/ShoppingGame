@@ -7,8 +7,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Camera gameCamera;
 
-    public Vector2Value rotationValue;
-    public Vector2Value movementValue;
+    public InputController input;
 
     private Rigidbody rb;
 
@@ -27,15 +26,15 @@ public class PlayerMovement : MonoBehaviour
     {
         const float ZERO_SPEED = 0.1f;
 
-        if (Math.Abs(movementValue.value.x) < ZERO_SPEED &&
-            Math.Abs(movementValue.value.y) < ZERO_SPEED)
+        if (Math.Abs(input.movement.x) < ZERO_SPEED &&
+            Math.Abs(input.movement.y) < ZERO_SPEED)
         {
             rb.velocity = Vector3.zero;
         }
         else
         {
-            var newPlayerPos = playerSpeed * (transform.forward * movementValue.value.y +
-                                              transform.right * movementValue.value.x);
+            var newPlayerPos = playerSpeed * (transform.forward * input.movement.y +
+                                              transform.right * input.movement.x);
 
             rb.MovePosition(transform.position + newPlayerPos);
         }
@@ -43,10 +42,9 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleRotationJoystick()
     {
-        // turning camera (only up and down)
         gameCamera.transform.rotation *=
-            Quaternion.Euler(-1.0f * rotationValue.value.y, 0.0f, 0.0f);
+            Quaternion.Euler(-1.0f * input.rotation.y, 0.0f, 0.0f);
 
-        rb.MoveRotation(transform.rotation * Quaternion.Euler(0.0f, rotationValue.value.x, 0.0f));
+        rb.MoveRotation(transform.rotation * Quaternion.Euler(0.0f, input.rotation.x, 0.0f));
     }
 }

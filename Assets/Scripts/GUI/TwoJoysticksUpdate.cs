@@ -5,15 +5,14 @@ public class TwoJoysticksUpdate : MonoBehaviour
     public Joystick movementJoystick;
     public Joystick rotationJoystick;
 
-    public Vector2Value movement;
-    public Vector2Value rotation;
+    public InputController inputController;
 
     void FixedUpdate()
     {
-        movement.value.x = movementJoystick.Horizontal;
-        movement.value.y = movementJoystick.Vertical;
+        inputController.movement.x = movementJoystick.Horizontal;
+        inputController.movement.y = movementJoystick.Vertical;
 
-        rotation.value.x = rotationJoystick.Horizontal;
-        rotation.value.y = rotationJoystick.Vertical;
+        inputController.rotation.x = rotationJoystick.Horizontal;
+        inputController.rotation.y = rotationJoystick.Vertical;
     }
 }

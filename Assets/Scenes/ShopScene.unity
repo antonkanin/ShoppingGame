@@ -470,8 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementJoystick: {fileID: 335580941}
   rotationJoystick: {fileID: 1299987458}
-  movement: {fileID: 11400000, guid: a2239aa52b22699468c5a74a6e6eddc0, type: 2}
-  rotation: {fileID: 11400000, guid: dd27a2055935c1849aee440a2ee5a909, type: 2}
+  inputController: {fileID: 623229002}
 --- !u!1 &263479983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,6 +1666,51 @@ Transform:
   - {fileID: 984833732}
   m_Father: {fileID: 2008916280}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &623229001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 623229003}
+  - component: {fileID: 623229002}
+  m_Layer: 0
+  m_Name: InputController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &623229002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623229001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57d555200c865ac4e9ade9e25e8e5509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: {x: 0, y: 0}
+  rotation: {x: 0, y: 0}
+--- !u!4 &623229003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623229001}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &648347958
 GameObject:
@@ -2867,7 +2911,7 @@ RectTransform:
   m_Children:
   - {fileID: 1213777124}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3472,7 +3516,7 @@ Transform:
   - {fileID: 1341845172}
   - {fileID: 1282862474}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1202114801
 PrefabInstance:
@@ -3672,7 +3716,7 @@ Transform:
   - {fileID: 2137292492}
   - {fileID: 529939111}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1213777123
 GameObject:
@@ -4337,7 +4381,7 @@ Transform:
   - {fileID: 648347959}
   - {fileID: 1070487178}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1472291369
 GameObject:
@@ -4479,9 +4523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc784ef2d8e128445aff086fa090ea59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Joystick: {fileID: 275198265}
-  movement: {fileID: 11400000, guid: a2239aa52b22699468c5a74a6e6eddc0, type: 2}
-  rotation: {fileID: 11400000, guid: dd27a2055935c1849aee440a2ee5a909, type: 2}
+  joystick: {fileID: 275198265}
+  inputController: {fileID: 623229002}
 --- !u!1 &1546141839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5120,7 +5163,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1923391187
 GameObject:
@@ -5325,8 +5368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 534669904}
-  rotationValue: {fileID: 11400000, guid: dd27a2055935c1849aee440a2ee5a909, type: 2}
-  movementValue: {fileID: 11400000, guid: a2239aa52b22699468c5a74a6e6eddc0, type: 2}
+  input: {fileID: 623229002}
 --- !u!54 &2008916282
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5591,7 +5633,7 @@ Transform:
   m_Children:
   - {fileID: 356776074}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2137292492 stripped
 Transform:
