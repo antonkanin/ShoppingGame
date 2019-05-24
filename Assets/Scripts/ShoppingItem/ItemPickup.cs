@@ -1,14 +1,17 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ItemPickup : MonoBehaviour
 {
     public GameEvent pickupEvent;
-    
+
     private void OnMouseDown()
     {
-        pickupEvent.Raise();
-        Debug.Log("Item picked");
-        Destroy(gameObject);
+        if (!EventSystem.current.IsPointerOverGameObject())
+        {
+            pickupEvent.Raise();
+            Debug.Log("Item picked");
+            Destroy(gameObject);
+        }
     }
 }
