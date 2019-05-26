@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class ItemPickup : MonoBehaviour
@@ -10,7 +11,6 @@ public class ItemPickup : MonoBehaviour
         if (!EventSystem.current.IsPointerOverGameObject())
         {
             pickupEvent.Raise();
-            Debug.Log("Item picked");
             Destroy(gameObject);
         }
     }
