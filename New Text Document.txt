@@ -1,3 +1,7 @@
 i am changing this file
 
+<<<<<<< HEAD
 line number two
+=======
+adding line number three
+>>>>>>> wip-thisisname
