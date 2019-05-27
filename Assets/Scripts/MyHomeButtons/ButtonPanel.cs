@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class ButtonPanel : MonoBehaviour
 {
-    [SerializeField] private GameObject panel;
+    [SerializeField] private GameObject panel = null;
     private bool objectActive = false;
-
 
     public void showhidePannel()
     {

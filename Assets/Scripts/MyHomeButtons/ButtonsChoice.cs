@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class ButtonsChoice : MonoBehaviour
 {
-    [SerializeField] private Sprite furniture;
-    [SerializeField] private GameObject buttonFurniture;
-    [SerializeField] private Text money;
-    [SerializeField] private Text price;
-    [SerializeField] private GameObject panelNoMany;
+    [SerializeField] private Sprite furniture = null;
+    [SerializeField] private GameObject buttonFurniture = null;
+    [SerializeField] private Text money = null;
+    [SerializeField] private Text price = null;
+    [SerializeField] private GameObject panelNoMany = null;
     private float _couterMoney;
 
     public void ChoiceFurniture() 
