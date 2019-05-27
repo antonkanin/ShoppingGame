@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 3681456640912145593}
   - component: {fileID: 2261041961832888786}
   - component: {fileID: 5159502728119298011}
-  - component: {fileID: 9061396143991294985}
+  - component: {fileID: 210222418343632926}
   m_Layer: 0
   m_Name: PickableItem
   m_TagString: Untagged
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minDistanceToPlayer: 2
   highlightFX: {fileID: 1958660761}
---- !u!114 &9061396143991294985
+--- !u!114 &210222418343632926
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

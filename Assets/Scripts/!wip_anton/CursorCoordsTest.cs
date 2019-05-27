@@ -1,10 +1,8 @@
 ﻿using UnityEngine;
 
-
-public class CartItemPickup : MonoBehaviour
+public class CursorCoordsTest : MonoBehaviour
 {
     private Vector3 mOffset;
-    
     private float mZCoord;
 
     void OnMouseDown()
@@ -31,5 +29,19 @@ public class CartItemPickup : MonoBehaviour
     void OnMouseDrag()
     {
         transform.position = GetMouseAsWorldPoint() + mOffset;
+    }
+
+
+    void DragObject_01()
+    {
+        Vector3 mousePosition =
+            new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.localPosition.z);
+
+        Vector3 objectPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+        Vector3 cameraRelative = Camera.main.transform.InverseTransformPoint(objectPosition);
+
+        transform.localPosition =
+            new Vector3(cameraRelative.x, cameraRelative.y, transform.localPosition.z);
     }
 }
