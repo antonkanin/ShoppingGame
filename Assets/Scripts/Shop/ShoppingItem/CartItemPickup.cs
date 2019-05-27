@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
 
-
 public class CartItemPickup : MonoBehaviour
 {
     private Vector3 mOffset;
-    
+
     private float mZCoord;
+
+    private Rigidbody rigidBody;
+
+    private float shootingForce = 10.0f;
+
+    private void Start()
+    {
+        rigidBody = GetComponent<Rigidbody>();
+    }
 
     void OnMouseDown()
     {
@@ -31,5 +39,11 @@ public class CartItemPickup : MonoBehaviour
     void OnMouseDrag()
     {
         transform.position = GetMouseAsWorldPoint() + mOffset;
+    }
+
+    private void OnMouseUp()
+    {
+        rigidBody.isKinematic = false;
+        rigidBody.AddForce(transform.forward * shootingForce, ForceMode.Impulse);
     }
 }

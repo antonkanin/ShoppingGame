@@ -17,7 +17,6 @@ public class ItemsPicker : MonoBehaviour
 
     public void AddItem()
     {
-        Debug.Log("ItemsPicker::AddItem()");
         if (pickedItems.Length <= itemsCount)
         {
             return;

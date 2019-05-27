@@ -16,7 +16,6 @@ public class Shooting : MonoBehaviour
 
     public float bulletLifeTime;
 
-
     private GameObject player;
 
     private GameObject bulletsParent;
