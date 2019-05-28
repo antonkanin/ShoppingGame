@@ -18,8 +18,8 @@ TagManager:
   - PostProcessing
   - Player
   - PickedItems
-  - 
-  - 
+  - ScannableItems
+  - EmptySlots
   - 
   - 
   - 

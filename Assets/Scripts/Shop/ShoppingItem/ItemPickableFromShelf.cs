@@ -10,7 +10,16 @@ public class ItemPickableFromShelf : MonoBehaviour
         if (!EventSystem.current.IsPointerOverGameObject())
         {
             pickupEvent.Raise();
-            Destroy(gameObject);
+            
+            MakeTransparent();
         }
+    }
+
+    void MakeTransparent()
+    {
+        var color = GetComponent<MeshRenderer>().material.color;
+
+        GetComponent<MeshRenderer>().material.color = 
+            new Color(color.r, color.g, color.b, 0.01f);
     }
 }

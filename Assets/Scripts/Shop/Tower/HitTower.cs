@@ -17,10 +17,8 @@ public class HitTower : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("OnCollisionEnter(Collision other)");
         if (other.gameObject.CompareTag("PickedItem"))
         {
-            Debug.Log("IF");
             StartCoroutine("TowerShock");
         }
     }

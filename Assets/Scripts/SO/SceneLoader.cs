@@ -13,7 +13,7 @@ public class SceneLoader : ScriptableObject
     {
         SceneManager.LoadScene(sceneName);
     }
-
+    
     public void LoadHome()
     {
         LoadScene(homeScene);
