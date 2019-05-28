@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ShopScene.unity
     guid: d03dce57bf9ceb24da07e05511f79e88
+  - enabled: 1
+    path: Assets/Scenes/MyHome.unity
+    guid: 4ba0990dbc1fa8a4080f2e459209baf9
+  - enabled: 1
+    path: Assets/Scenes/wip_antonkanin.unity
+    guid: 2ad9228a086dfef46be404a948cb2b64
   m_configObjects: {}
