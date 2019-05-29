@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 1829531132718385202}
   - component: {fileID: 8213008553919289970}
   - component: {fileID: 4805054304906943916}
-  - component: {fileID: 4662381150271903165}
+  - component: {fileID: 8325940841976764515}
+  - component: {fileID: 4509009575476693158}
   m_Layer: 10
   m_Name: PickedItem
   m_TagString: PickedItem
@@ -109,7 +110,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4662381150271903165
+--- !u!114 &8325940841976764515
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,6 +119,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1829531132718385201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 486981d1ae08cf044a0568c87a8596f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 24817260b459f1f4c99a0318f86973cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fightModeOnEvent: {fileID: 11400000, guid: 3133cf08341dd0c479b8b89c0043fe20, type: 2}
+  fightModeOffEvent: {fileID: 11400000, guid: 662755696e010574282007beed30b90e, type: 2}
+--- !u!114 &4509009575476693158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829531132718385201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64a9c8297fda64147ac30c5af90dfb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 1

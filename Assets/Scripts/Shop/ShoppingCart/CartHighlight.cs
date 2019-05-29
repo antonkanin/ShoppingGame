@@ -1,23 +1,36 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class CartHighlight : MonoBehaviour
 {
     public MeshRenderer[] cartMesh;
 
-    // TODO we need to optimize this code
+    private List<CartItemType> cartItemTypes = new List<CartItemType>();
+
+    private void Start()
+    {
+        foreach (var cartObject in cartMesh)
+        {
+            var cartItemType = cartObject.gameObject.GetComponent<CartItemType>();
+            cartItemTypes.Add(cartItemType);
+        }
+    }
+
     public void SetHighlight(bool enabled)
     {
-        foreach (var cartItem in cartMesh)
+        for (int index = 0; index < cartMesh.Length; ++index)
         {
-            if (cartItem.gameObject.activeSelf)
+            if (cartMesh[index].gameObject.activeSelf &&
+                cartItemTypes[index].itemType == CartItemType.ItemType.Regular)
             {
                 if (enabled)
                 {
-                    cartItem.material.color = Color.yellow;
+                    cartMesh[index].material.color = Color.yellow;
                 }
                 else
                 {
-                    cartItem.material.color = Color.red;
+                    cartMesh[index].material.color = Color.red;
                 }
             }
         }
