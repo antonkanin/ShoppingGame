@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 914101512791538097}
   - component: {fileID: 914101512791538096}
   - component: {fileID: 914101512791538099}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,9 @@ GameObject:
   - component: {fileID: 914101513751925988}
   - component: {fileID: 7127406265327378248}
   - component: {fileID: 7534963403097315136}
-  m_Layer: 0
+  - component: {fileID: 412214816}
+  - component: {fileID: 335626910271928181}
+  m_Layer: 13
   m_Name: Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -160,6 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 914101512791538096}
   shockDuration: 3
+  fightModeOffEvent: {fileID: 11400000, guid: 662755696e010574282007beed30b90e, type: 2}
 --- !u!54 &7534963403097315136
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -176,6 +179,64 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &412214816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914101513751925990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb88fc98efc46b4e9f0914bd7d3aa2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 3133cf08341dd0c479b8b89c0043fe20, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7127406265327378248}
+        m_MethodName: AcceptHitsEnable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &335626910271928181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914101513751925990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb88fc98efc46b4e9f0914bd7d3aa2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 662755696e010574282007beed30b90e, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7127406265327378248}
+        m_MethodName: AcceptHitsDisable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &914101514370975846
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +249,7 @@ GameObject:
   - component: {fileID: 914101514370975842}
   - component: {fileID: 914101514370975845}
   - component: {fileID: 914101514370975844}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +337,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1197744978124017413}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: BulletSpawnPoint.empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}

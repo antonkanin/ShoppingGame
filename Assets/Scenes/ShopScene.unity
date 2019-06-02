@@ -704,7 +704,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &167764647
 RectTransform:
   m_ObjectHideFlags: 0
@@ -716,7 +716,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1535741169}
   - {fileID: 569723651}
   - {fileID: 1080349025}
   - {fileID: 228874219}
@@ -958,7 +957,7 @@ RectTransform:
   m_Children:
   - {fileID: 570974656}
   m_Father: {fileID: 167764647}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1536,7 +1535,7 @@ RectTransform:
   m_Children:
   - {fileID: 1112189053}
   m_Father: {fileID: 167764647}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2371,7 +2370,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &528223447
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,7 +2761,7 @@ RectTransform:
   m_Children:
   - {fileID: 502621485}
   m_Father: {fileID: 167764647}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3857,6 +3856,7 @@ GameObject:
   - component: {fileID: 749158279}
   - component: {fileID: 749158280}
   - component: {fileID: 749158282}
+  - component: {fileID: 749158281}
   m_Layer: 5
   m_Name: ShoppingCart
   m_TagString: Untagged
@@ -3927,6 +3927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd794d1ccd2d3a499895c6de904e318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  neighbourUtils: {fileID: 2008916287}
+  fightModeOnEvent: {fileID: 11400000, guid: 3133cf08341dd0c479b8b89c0043fe20, type: 2}
   cartGameObjects:
   - {fileID: 1182137704}
   - {fileID: 1268378754}
@@ -3936,6 +3938,35 @@ MonoBehaviour:
   - {fileID: 573009266}
   - {fileID: 1582276603}
   - {fileID: 553541328}
+--- !u!114 &749158281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749158277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb88fc98efc46b4e9f0914bd7d3aa2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 662755696e010574282007beed30b90e, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 749158280}
+        m_MethodName: FightModeOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &749158282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3977,11 +4008,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 914101513751925990, guid: 5693e775f2f051a46acb3efa1cc95b3c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4020,7 +4046,7 @@ PrefabInstance:
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
@@ -4036,26 +4062,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 914101513751925988, guid: 5693e775f2f051a46acb3efa1cc95b3c,
-        type: 3}
-      propertyPath: bulletsParent
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 914101513751925988, guid: 5693e775f2f051a46acb3efa1cc95b3c,
-        type: 3}
-      propertyPath: bulletLifeTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 914101513751925988, guid: 5693e775f2f051a46acb3efa1cc95b3c,
-        type: 3}
-      propertyPath: distanceToPlayer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 914101513751925988, guid: 5693e775f2f051a46acb3efa1cc95b3c,
-        type: 3}
-      propertyPath: shootingForce
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5693e775f2f051a46acb3efa1cc95b3c, type: 3}
@@ -4974,7 +4980,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &1070487177
 GameObject:
   m_ObjectHideFlags: 0
@@ -5129,7 +5135,7 @@ RectTransform:
   - {fileID: 1590350077}
   - {fileID: 1569604988}
   m_Father: {fileID: 167764647}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5402,19 +5408,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cartManager: {fileID: 749158280}
---- !u!114 &1182137711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182137704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64a9c8297fda64147ac30c5af90dfb95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemType: 0
 --- !u!4 &1186871627 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8798047097499430008, guid: c02c1c4d719a8f2479fa475a8a20f11f,
@@ -5436,7 +5429,7 @@ PrefabInstance:
     - target: {fileID: 914101513751925990, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
@@ -5476,7 +5469,7 @@ PrefabInstance:
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
@@ -5745,6 +5738,7 @@ RectTransform:
   - {fileID: 1953673095}
   - {fileID: 1117525257}
   - {fileID: 749158278}
+  - {fileID: 1535741169}
   m_Father: {fileID: 982183908}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6666,8 +6660,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 211848164}
-  m_Father: {fileID: 167764647}
-  m_RootOrder: 0
+  m_Father: {fileID: 1213777124}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6703,7 +6697,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_CallsDirty: 1
 --- !u!114 &1535741171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6733,7 +6726,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-    m_CallsDirty: 1
 --- !u!1001 &1549379382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8205,7 +8197,7 @@ PrefabInstance:
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
@@ -8559,7 +8551,7 @@ GameObject:
   - component: {fileID: 2008916283}
   - component: {fileID: 2008916287}
   m_Layer: 9
-  m_Name: Player1
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8638,6 +8630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd794d1ccd2d3a499895c6de904e318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  neighbourUtils: {fileID: 0}
+  fightModeOnEvent: {fileID: 0}
   cartGameObjects: []
 --- !u!114 &2008916286
 MonoBehaviour:
@@ -8665,10 +8659,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d753aa60ae7b4d64495d0159df9590dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemsRadius: 2
-  mask:
+  itemsRadius: 10
+  emptyItemsMask:
     serializedVersion: 2
     m_Bits: 4096
+  towersMask:
+    serializedVersion: 2
+    m_Bits: 8192
   cartHighlight: {fileID: 984833733}
 --- !u!1 &2049662749
 GameObject:

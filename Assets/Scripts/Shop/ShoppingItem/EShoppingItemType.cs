@@ -26,4 +26,9 @@ public class ItemUtils
                 throw new Exception("Shopping item " + itemType + " not supported");
         } 
     }
+
+    public static bool IsFightingItem(EShoppingItemType itemType)
+    {
+        return itemType == EShoppingItemType.Milk;
+    }
 }

@@ -5,9 +5,16 @@ using UnityEngine.UI;
 
 public class CartManager : MonoBehaviour
 {
+    public CheckNeighbour neighbourUtils;
+
+    public GameEvent fightModeOnEvent;
+
     public GameObject[] cartGameObjects;
 
     private List<EShoppingItemType> cartItemTypes = new List<EShoppingItemType>();
+
+    private bool isFightModeOn = false;
+    private int fightingItemPosition;
 
     void Start()
     {
@@ -49,7 +56,6 @@ public class CartManager : MonoBehaviour
         cartGameObjects[position].GetComponent<Button>().interactable = false;
 
         cartItemTypes[position] = EShoppingItemType.Empty;
-        
     }
 
     public EShoppingItemType GetItemType(int position)
@@ -59,7 +65,12 @@ public class CartManager : MonoBehaviour
         return cartItemTypes[position];
     }
 
-    void CheckBounds(int position)
+    private string GetItemName(int position)
+    {
+        return ItemUtils.ItemName(GetItemType(position));
+    }
+
+    static void CheckBounds(int position)
     {
         const int cartItemsMaxCount = 8;
 
@@ -93,5 +104,49 @@ public class CartManager : MonoBehaviour
         }
 
         return availablePosition;
+    }
+
+    public void SelectItem(int position)
+    {
+        Debug.Log("Selecting item " + GetItemName(position));
+
+        var itemType = GetItemType(position);
+
+        if (ItemUtils.IsFightingItem(itemType))
+        {
+            if (!isFightModeOn)
+            {
+                TryInitializeFightMode(position);
+            }
+            else
+            {
+                Debug.Log("You are already in the fight mode");
+            }
+        }
+        else
+        {
+            Debug.Log("Regular item - we will move it the shelf....");
+        }
+    }
+
+    void TryInitializeFightMode(int position)
+    {
+        if (neighbourUtils.IsTowerNearBy())
+        {
+            isFightModeOn = true;
+            fightingItemPosition = position;
+
+            fightModeOnEvent.Raise();
+        }
+    }
+
+    public void FightModeOff()
+    {
+        if (isFightModeOn)
+        {
+            isFightModeOn = false;
+            RemoveItem(fightingItemPosition);
+            fightingItemPosition = -1;
+        }
     }
 }

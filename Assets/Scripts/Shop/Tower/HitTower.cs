@@ -7,17 +7,33 @@ public class HitTower : MonoBehaviour
 
     public float shockDuration = 3.0f;
 
+    public GameEvent fightModeOffEvent;
+
     private Shooting shooting;
+
+    private bool isAcceptingHits = false;
 
     private void Start()
     {
         shooting = GetComponent<Shooting>();
     }
 
-    private void OnCollisionEnter(Collision other)
+    public void AcceptHitsEnable()
     {
-        if (other.gameObject.CompareTag("PickedItem"))
+        isAcceptingHits = true;
+    }
+
+    public void AcceptHitsDisable()
+    {
+        isAcceptingHits = false;
+    }
+
+    private void OnMouseDown()
+    {
+        if (isAcceptingHits)
         {
+            Debug.Log("Tower was hit");
+            fightModeOffEvent.Raise();
             StartCoroutine("TowerShock");
         }
     }

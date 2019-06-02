@@ -5,7 +5,7 @@ public class Utils : MonoBehaviour
 {
     public static GameObject FindPlayer()
     {
-        const string playerObjectName = "Player1";
+        const string playerObjectName = "Player";
 
         var player = GameObject.Find(playerObjectName);
 
