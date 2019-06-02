@@ -28,12 +28,7 @@ public class Shooting : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");
-
-        if (player == null)
-        {
-            throw new NullReferenceException("Player game object not found");
-        }
+        player = Utils.FindPlayer(); 
 
         bulletsParent = GameObject.Find("Bullets");
 

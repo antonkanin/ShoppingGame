@@ -11,12 +11,7 @@ public class ItemHighlight : MonoBehaviour
 
     private void Start()
     {
-        var player = GameObject.Find("Player");
-
-        if (player == null)
-        {
-            throw new NullReferenceException("Cannot find Player object on the scene");
-        }
+        var player = Utils.FindPlayer();
 
         playerPosition = player.transform;
         

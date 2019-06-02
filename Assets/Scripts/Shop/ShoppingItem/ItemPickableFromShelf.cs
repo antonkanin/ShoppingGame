@@ -9,12 +9,19 @@ public class ItemPickableFromShelf : MonoBehaviour
 
     public MeshRenderer itemBody;
 
+    public TextMesh nameText;
+
+    private void Start()
+    {
+        nameText.text = ItemUtils.ItemName(itemType);
+    }
+
     private void OnMouseDown()
     {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
             pickupEvent.Raise(itemType);
-            
+
             MakeTransparent();
         }
     }
@@ -23,7 +30,9 @@ public class ItemPickableFromShelf : MonoBehaviour
     {
         var color = itemBody.material.color;
 
-        itemBody.material.color = 
+        itemBody.material.color =
             new Color(color.r, color.g, color.b, 0.01f);
+
+        nameText.gameObject.SetActive(false);
     }
 }
