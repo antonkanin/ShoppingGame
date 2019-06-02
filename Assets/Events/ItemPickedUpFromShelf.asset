@@ -9,6 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85524423703950d4791978b43716b9ef, type: 3}
-  m_Name: ItemPickedEvent
+  m_Script: {fileID: 11500000, guid: be9f512e16685f442a1d4fa31c52e269, type: 3}
+  m_Name: ItemPickedUpFromShelf
   m_EditorClassIdentifier: 

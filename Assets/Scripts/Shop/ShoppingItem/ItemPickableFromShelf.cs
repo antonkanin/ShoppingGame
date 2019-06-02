@@ -3,13 +3,17 @@ using UnityEngine.EventSystems;
 
 public class ItemPickableFromShelf : MonoBehaviour
 {
-    public GameEvent pickupEvent;
+    public ShoppingItemEvent pickupEvent;
+
+    public EShoppingItemType itemType;
+
+    public MeshRenderer itemBody;
 
     private void OnMouseDown()
     {
         if (!EventSystem.current.IsPointerOverGameObject())
         {
-            pickupEvent.Raise();
+            pickupEvent.Raise(itemType);
             
             MakeTransparent();
         }
@@ -17,9 +21,9 @@ public class ItemPickableFromShelf : MonoBehaviour
 
     void MakeTransparent()
     {
-        var color = GetComponent<MeshRenderer>().material.color;
+        var color = itemBody.material.color;
 
-        GetComponent<MeshRenderer>().material.color = 
+        itemBody.material.color = 
             new Color(color.r, color.g, color.b, 0.01f);
     }
 }

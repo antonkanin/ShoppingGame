@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class HitTower : MonoBehaviour
 {
-    // Start is called before the first frame update
     public MeshRenderer head;
 
     public float shockDuration = 3.0f;
