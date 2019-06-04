@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d92e335905c66ff419c8b8914d84a687, type: 3}
   m_Name: SceneLoader
   m_EditorClassIdentifier: 
+  mainMenuScene: MainMenu
   shopScene: ShopScene
   homeScene: MyHome

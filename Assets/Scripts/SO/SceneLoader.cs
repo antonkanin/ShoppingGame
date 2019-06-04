@@ -4,13 +4,18 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu]
 public class SceneLoader : ScriptableObject
 {
-    // Start is called before the first frame update
+    public string mainMenuScene;
     public string shopScene;
     public string homeScene;
 
     void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
+    }
+    
+    public void LoadMainMenu()
+    {
+        LoadScene(mainMenuScene);
     }
     
     public void LoadHome()
