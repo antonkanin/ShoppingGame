@@ -1,23 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using Debug = UnityEngine.Debug;
 
 public class CartManager : MonoBehaviour
 {
-    public CheckNeighbour neighbourUtils;
-
     public GameEvent fightModeOnEvent;
 
-    public GameObject[] cartGameObjects;
+    public CartItem[] cartGameObjects;
 
     private List<EShoppingItemType> cartItemTypes = new List<EShoppingItemType>();
 
+    private CheckNeighbour neighbourUtils;
+
     private bool isFightModeOn = false;
+
+    private bool canReturnItemsToShelf = false;
+
     private int fightingItemPosition;
 
     void Start()
     {
+        neighbourUtils = Utils.FindPlayer().GetComponent<CheckNeighbour>();
+
         SetDefaultValues();
     }
 
@@ -26,12 +31,8 @@ public class CartManager : MonoBehaviour
         for (int index = 0; index < cartGameObjects.Length; ++index)
         {
             cartItemTypes.Add(EShoppingItemType.Empty);
-        }
 
-        foreach (var item in cartGameObjects)
-        {
-            item.GetComponentInChildren<Text>().text = "N/A";
-            item.GetComponent<Button>().interactable = false;
+            cartGameObjects[index].ItemType = EShoppingItemType.Empty;
         }
     }
 
@@ -52,8 +53,7 @@ public class CartManager : MonoBehaviour
     {
         CheckBounds(position);
 
-        cartGameObjects[position].GetComponentInChildren<Text>().text = "N/A";
-        cartGameObjects[position].GetComponent<Button>().interactable = false;
+        cartGameObjects[position].ItemType = EShoppingItemType.Empty;
 
         cartItemTypes[position] = EShoppingItemType.Empty;
     }
@@ -83,11 +83,12 @@ public class CartManager : MonoBehaviour
     void AddItemToPosition(int position, EShoppingItemType itemType)
     {
         cartItemTypes[position] = itemType;
+        cartGameObjects[position].ItemType = itemType;
 
-        cartGameObjects[position].GetComponentInChildren<Text>().text =
-            ItemUtils.ItemName(itemType);
-
-        cartGameObjects[position].GetComponent<Button>().interactable = true;
+        if (canReturnItemsToShelf || neighbourUtils.IsTowerNearBy())
+        {
+            cartGameObjects[position].SetCanClick(true);
+        }
     }
 
     int GetAvailablePosition()
@@ -125,7 +126,7 @@ public class CartManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Regular item - we will move it the shelf....");
+            Debug.Log("Regular item - we will move it to the shelf....");
         }
     }
 
@@ -147,6 +148,32 @@ public class CartManager : MonoBehaviour
             isFightModeOn = false;
             RemoveItem(fightingItemPosition);
             fightingItemPosition = -1;
+        }
+    }
+
+    public void EnableReturnableItems()
+    {
+        SetReturnableItemsState(true);
+    }
+
+    public void DisableReturnableItems()
+    {
+        SetReturnableItemsState(false);
+    }
+
+    void SetReturnableItemsState(bool state)
+    {
+        canReturnItemsToShelf = state;
+
+        for (int index = 0; index < cartItemTypes.Count; ++index)
+        {
+            if (false == ItemUtils.IsFightingItem(cartItemTypes[index]))
+            {
+                if (cartItemTypes[index] != EShoppingItemType.Empty)
+                {
+                    cartGameObjects[index].SetCanClick(state);
+                }
+            }
         }
     }
 }
