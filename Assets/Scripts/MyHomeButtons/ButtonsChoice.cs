@@ -14,6 +14,12 @@ public class ButtonsChoice : MonoBehaviour
 
     public void ChoiceFurniture() 
     {
+        // опасно, лучше отталкиваться от float значения
+        // и его уже в текст переводить для отображения.
+        // это важно для простоты настройки, верификации данных
+        // и в будущем локализации.
+        // ScriptableObject отменно подойдёт для хранения этих данных,
+        // а компонент пускай устанавливает тексты сам.
        if (float.Parse(money.text) >= float.Parse(price.text))
         {
             buttonFurniture.GetComponent<Image>().sprite = furniture;

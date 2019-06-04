@@ -28,8 +28,11 @@ public class Shooting : MonoBehaviour
 
     void Start()
     {
-        player = Utils.FindPlayer(); 
+        player = Utils.FindPlayer();
 
+        // зачастую лучше установить ссылку вручную.
+        // в этом случае вроде бы допустимо, чтобы
+        // уменьшить количество ручной настройки
         bulletsParent = GameObject.Find("Bullets");
 
         if (bulletsParent == null)
@@ -40,6 +43,9 @@ public class Shooting : MonoBehaviour
 
     void Update()
     {
+        // запуск корутин в Update ._. Здесь кажется, что
+        // всё в порядке, внутри метода нужные проверки,
+        // но в целом обычно можно переписать такой код
         TryShootAtPlayer();
     }
 
@@ -49,7 +55,8 @@ public class Shooting : MonoBehaviour
 
         if (distance <= distanceToPlayer && !isShotFired)
         {
-            StartCoroutine("Shoot");
+            // с корутинами опять же предложу писать так:
+            StartCoroutine(Shoot());
         }
     }
 
