@@ -9,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rigidBody;
 
+    // зело скверно использовать такое значение,
+    // ниже описал подробнее
     private const float PLAYER_SPEED = 0.01f;
 
     private void Start()
@@ -35,8 +37,22 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            var newPlayerPos = input.playerSpeed * PLAYER_SPEED * (transform.forward * input.movement.y +
-                                                                   transform.right * input.movement.x);
+            // эту часть я вынес, чтобы показать проблему с вычислением скорости таким образом.
+            // если я жму "вперёд", длина вектора движения будет равна 1.
+            // если "вправо", тоже 1.
+            // а вот если "вперёд" и "вправо" одновременно, то вектора сложатся и у меня получится вектор (1,1) -
+            // длина корень из двух.
+            Vector3 positionChange = (transform.forward * input.movement.y + transform.right * input.movement.x);
+
+            // чтобы это исправить, нормализуйте вектор.
+            positionChange.Normalize();
+
+            // если DeltaTime меняется, персонаж будет двигаться быстрее или медленнее 
+            // в зависимости от частоты смены кадров. Здесь используется FixedUpdate, да - это подавит 
+            // зависимость от частоты кадров, но зависимость от величины FixedUpdate останется. Я поменял это значение
+            // в настройках, чтобы продемонстрировать.
+            // чтобы компенсировать это, я поменял PLAYER_SPEED ниже на Time.deltaTime.
+            var newPlayerPos = input.playerSpeed * Time.deltaTime * positionChange;
 
             rigidBody.MovePosition(transform.position + newPlayerPos);
         }
