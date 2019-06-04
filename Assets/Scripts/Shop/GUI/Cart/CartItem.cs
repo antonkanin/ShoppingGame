@@ -37,6 +37,7 @@ public class CartItem : MonoBehaviour
             {
                 button.interactable = false;
                 itemText.text = "N/A";
+                
             }
             else
             {

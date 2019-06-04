@@ -53,6 +53,7 @@ public class CartManager : MonoBehaviour
     {
         CheckBounds(position);
 
+        cartGameObjects[position].SetCanClick(false);
         cartGameObjects[position].ItemType = EShoppingItemType.Empty;
 
         cartItemTypes[position] = EShoppingItemType.Empty;
