@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milk (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 5004299479640505178, guid: c02c1c4d719a8f2479fa475a8a20f11f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8798047097499430008, guid: c02c1c4d719a8f2479fa475a8a20f11f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -197,9 +202,14 @@ PrefabInstance:
       objectReference: {fileID: 2122032531}
     - target: {fileID: 1958660761, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7655530559653767360, guid: c02c1c4d719a8f2479fa475a8a20f11f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4855167469636724653, guid: c02c1c4d719a8f2479fa475a8a20f11f,
         type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -348,6 +358,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickableItem (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5004299479640505178, guid: c02c1c4d719a8f2479fa475a8a20f11f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8798047097499430008, guid: c02c1c4d719a8f2479fa475a8a20f11f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -402,6 +417,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051219117, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
+      propertyPath: itemType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
@@ -477,6 +496,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051219117, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
+      propertyPath: itemType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
@@ -982,6 +1005,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickableItem (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5004299479640505178, guid: c02c1c4d719a8f2479fa475a8a20f11f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8798047097499430008, guid: c02c1c4d719a8f2479fa475a8a20f11f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1036,6 +1064,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051219117, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
+      propertyPath: itemType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
@@ -2657,7 +2689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1051219117, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
       propertyPath: itemType
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
@@ -3061,6 +3093,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 914101513751925990, guid: 5693e775f2f051a46acb3efa1cc95b3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3305,6 +3342,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickableItem (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004299479640505178, guid: c02c1c4d719a8f2479fa475a8a20f11f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8798047097499430008, guid: c02c1c4d719a8f2479fa475a8a20f11f,
         type: 3}
@@ -4416,7 +4458,7 @@ PrefabInstance:
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.38
+      value: -6.37
       objectReference: {fileID: 0}
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
@@ -5256,6 +5298,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: milk
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 3eb4e217bb60a434c9166d99d432957b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 3eb4e217bb60a434c9166d99d432957b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5514,6 +5561,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickableItem (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5004299479640505178, guid: c02c1c4d719a8f2479fa475a8a20f11f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8798047097499430008, guid: c02c1c4d719a8f2479fa475a8a20f11f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5573,6 +5625,10 @@ PrefabInstance:
       propertyPath: itemBody
       value: 
       objectReference: {fileID: 529869871}
+    - target: {fileID: 1051219117, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
+      propertyPath: itemType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
 --- !u!4 &1549379383 stripped
@@ -6058,6 +6114,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickableItem
       objectReference: {fileID: 0}
+    - target: {fileID: 5004299479640505178, guid: c02c1c4d719a8f2479fa475a8a20f11f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8798047097499430008, guid: c02c1c4d719a8f2479fa475a8a20f11f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6254,6 +6315,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickableItem (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5004299479640505178, guid: c02c1c4d719a8f2479fa475a8a20f11f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8798047097499430008, guid: c02c1c4d719a8f2479fa475a8a20f11f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6309,6 +6375,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1051219117, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
+      propertyPath: itemType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
 --- !u!4 &1717898813 stripped
@@ -6328,6 +6398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickableItem (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004299479640505178, guid: c02c1c4d719a8f2479fa475a8a20f11f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8798047097499430008, guid: c02c1c4d719a8f2479fa475a8a20f11f,
         type: 3}
@@ -6383,6 +6458,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051219117, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
+      propertyPath: itemType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 905694574, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
       propertyPath: player
@@ -6699,6 +6778,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 914101513751925990, guid: 5693e775f2f051a46acb3efa1cc95b3c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6939,6 +7023,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PickableItem (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5004299479640505178, guid: c02c1c4d719a8f2479fa475a8a20f11f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8798047097499430008, guid: c02c1c4d719a8f2479fa475a8a20f11f,
         type: 3}
@@ -7634,6 +7723,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1566093299}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &886765198266626428 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 886765198266626428, guid: fec285a111a9bcb489d78d159519d12b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3976657834459355280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1838905185311523031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8077,7 +8172,7 @@ PrefabInstance:
     - target: {fileID: 3976657834850187688, guid: fec285a111a9bcb489d78d159519d12b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.758
+      value: -4.698
       objectReference: {fileID: 0}
     - target: {fileID: 3976657834850187688, guid: fec285a111a9bcb489d78d159519d12b,
         type: 3}
@@ -8141,13 +8236,18 @@ PrefabInstance:
       objectReference: {fileID: 623229002}
     - target: {fileID: 3976657834850187695, guid: fec285a111a9bcb489d78d159519d12b,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3976657834850187695, guid: fec285a111a9bcb489d78d159519d12b,
+      propertyPath: playerCenter
+      value: 
+      objectReference: {fileID: 886765198266626428}
+    - target: {fileID: 886765198266626428, guid: fec285a111a9bcb489d78d159519d12b,
         type: 3}
-      propertyPath: itemsRadius
-      value: 2
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 886765198266626428, guid: fec285a111a9bcb489d78d159519d12b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.559
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fec285a111a9bcb489d78d159519d12b, type: 3}
@@ -8244,6 +8344,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PickableItem
       objectReference: {fileID: 0}
+    - target: {fileID: 5004299479640505178, guid: c02c1c4d719a8f2479fa475a8a20f11f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8798047097499430008, guid: c02c1c4d719a8f2479fa475a8a20f11f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8298,6 +8403,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1051219117, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}
+      propertyPath: itemType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02c1c4d719a8f2479fa475a8a20f11f, type: 3}

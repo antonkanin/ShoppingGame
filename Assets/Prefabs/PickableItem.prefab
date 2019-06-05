@@ -211,7 +211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4687839915097679419
 Transform:
   m_ObjectHideFlags: 0
@@ -303,9 +303,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupEvent: {fileID: 11400000, guid: e1d1e2a94aa23804cb5df041713eb7ec, type: 2}
-  itemType: 2
+  itemType: 1
   itemBody: {fileID: 33676368858724254}
   nameText: {fileID: 905694572}
+  emptySlot: {fileID: 4855167469636724653}
 --- !u!54 &1507594138
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 914101512791538096}
-  shockDuration: 3
+  shockDuration: 6
   fightModeOffEvent: {fileID: 11400000, guid: 662755696e010574282007beed30b90e, type: 2}
 --- !u!54 &7534963403097315136
 Rigidbody:

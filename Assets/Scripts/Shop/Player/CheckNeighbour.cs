@@ -2,6 +2,8 @@
 
 public class CheckNeighbour : MonoBehaviour
 {
+    public Transform playerCenter;
+
     public float emptySlotRadius = 2.0f;
 
     public float towerRaius = 10.0f;
@@ -37,17 +39,34 @@ public class CheckNeighbour : MonoBehaviour
 
     public bool IsTowerNearBy()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, towerRaius, towersMask);
+        Collider[] hitColliders = 
+            Physics.OverlapSphere(playerCenter.position, towerRaius, towersMask);
 
         return hitColliders.Length > 0;
     }
 
     bool IsAvailableSpaceNearby()
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, emptySlotRadius, emptyItemsMask);
-
-        // Debug.Log(hitColliders.Length);
+        Collider[] hitColliders = 
+            Physics.OverlapSphere(playerCenter.position, emptySlotRadius, emptyItemsMask);
 
         return hitColliders.Length > 0;
+    }
+
+    public bool TryReturnItem(EShoppingItemType itemType)
+    {
+        Collider[] hitColliders = 
+            Physics.OverlapSphere(playerCenter.position, emptySlotRadius, emptyItemsMask);
+
+        if (hitColliders.Length <= 0)
+        {
+            Debug.Log("Cannot find empty slot on the shelf");
+            return false;
+        }
+
+        var parentObject = hitColliders[0].gameObject.transform.parent.gameObject;
+        parentObject.GetComponent<ShelfItem>().SetItemType(itemType);
+
+        return true;
     }
 }

@@ -127,7 +127,10 @@ public class CartManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Regular item - we will move it to the shelf....");
+            if (neighbourUtils.TryReturnItem(itemType))
+            {
+                RemoveItem(position);
+            }
         }
     }
 
