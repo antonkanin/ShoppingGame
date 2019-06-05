@@ -24,8 +24,6 @@ public class CartManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("CartManager::Start()");
-
         neighbourUtils = Utils.FindPlayer().GetComponent<CheckNeighbour>();
 
         SetDefaultValues();
@@ -121,7 +119,6 @@ public class CartManager : MonoBehaviour
         {
             if (!isFightModeOn)
             {
-                Debug.Log("TryInitializeFightMode(position);");
                 TryInitializeFightMode(position);
             }
             else
@@ -133,7 +130,6 @@ public class CartManager : MonoBehaviour
         {
             if (neighbourUtils.TryReturnItem(itemType))
             {
-                Debug.Log(" RemoveItem(position);");
                 RemoveItem(position);
             }
         }

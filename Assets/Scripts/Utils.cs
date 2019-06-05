@@ -5,15 +5,23 @@ public class Utils : MonoBehaviour
 {
     public static GameObject FindPlayer()
     {
-        const string playerObjectName = "Player";
+        return FindSceneObject("Player");
+    }
 
-        var player = GameObject.Find(playerObjectName);
+    public static GameObject FindInputController()
+    {
+        return FindSceneObject("InputController");
+    }
 
-        if (player == null)
+    static GameObject FindSceneObject(string objectName)
+    {
+        var sceneObject = GameObject.Find(objectName);
+
+        if (sceneObject == null)
         {
-            throw new NullReferenceException("Cannot find Player object on the scene");
+            throw new NullReferenceException("Cannot find " + objectName + " object on the scene");
         }
 
-        return player;
+        return sceneObject;
     }
 }

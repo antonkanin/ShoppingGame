@@ -1,18 +1,21 @@
 ﻿using System;
+using System.ComponentModel;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public Camera gameCamera;
 
-    public InputController input;
-
+    private InputController input;
+    
     private Rigidbody rigidBody;
 
     private const float PLAYER_SPEED = 0.01f;
 
     private void Start()
     {
+        input = Utils.FindInputController().GetComponent<InputController>();
+
         rigidBody = GetComponent<Rigidbody>();
     }
 

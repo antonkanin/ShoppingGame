@@ -492,7 +492,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3976657834850187688}
   - component: {fileID: 3976657834850187689}
-  - component: {fileID: 3976657834850187692}
   - component: {fileID: 3976657834850187694}
   - component: {fileID: 3976657834850187690}
   - component: {fileID: 3976657834850187691}
@@ -535,8 +534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCamera: {fileID: 3976657834453971648}
-  input: {fileID: 0}
---- !u!114 &3976657834850187692
+--- !u!114 &3976657834850187694
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -545,24 +543,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3976657834850187687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd794d1ccd2d3a499895c6de904e318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fightModeOnEvent: {fileID: 0}
-  cartGameObjects: []
---- !u!114 &3976657834850187694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3976657834850187687}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c9b5a20f4e211e44be3e0fdbc244dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 0}
   slowDownTime: 1
 --- !u!54 &3976657834850187690
 Rigidbody:
@@ -606,9 +589,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d753aa60ae7b4d64495d0159df9590dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCenter: {fileID: 0}
+  playerCenter: {fileID: 886765198266626428}
   emptySlotRadius: 2
-  towerRaius: 10
+  towerRaius: 3
   emptyItemsMask:
     serializedVersion: 2
     m_Bits: 4096
@@ -811,7 +794,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7819990513160560234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 1.559}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3976657834850187688}
