@@ -151,12 +151,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 383151902}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -335.80002, y: 6.5}
-  m_SizeDelta: {x: 220.42, y: 136.58}
+  m_AnchoredPosition: {x: -379.3, y: -75}
+  m_SizeDelta: {x: 50.09, y: 43.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &88800610
 MonoBehaviour:
@@ -234,8 +234,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3721805f943981448a6df99642fb25f6, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -442,6 +442,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1885429536}
   - {fileID: 88800609}
   - {fileID: 1246999121}
   m_Father: {fileID: 1128639831}
@@ -536,7 +537,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 436506726}
-        m_MethodName: ChoiceFurniture
+        m_MethodName: ChooseFurniture
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -597,8 +598,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8468e554b6518b04584f19e909412ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furniture: {fileID: 21300000, guid: 06569a7c8aaceda4d92e8cb4c2103286, type: 3}
-  buttonFurniture: {fileID: 88800608}
+  spriteFurniture: {fileID: 21300000, guid: 06569a7c8aaceda4d92e8cb4c2103286, type: 3}
+  furniture: {fileID: 1885429535}
   money: {fileID: 584529225}
   price: {fileID: 239580980}
   panelNoMany: {fileID: 1889619418}
@@ -768,7 +769,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 735189893}
-        m_MethodName: ChoiceFurniture
+        m_MethodName: ChooseFurniture
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -829,8 +830,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8468e554b6518b04584f19e909412ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furniture: {fileID: 21300000, guid: f69041455b4c6574d8cceb0a271dc49e, type: 3}
-  buttonFurniture: {fileID: 88800608}
+  spriteFurniture: {fileID: 21300000, guid: f69041455b4c6574d8cceb0a271dc49e, type: 3}
+  furniture: {fileID: 1885429535}
   money: {fileID: 584529225}
   price: {fileID: 2045838070}
   panelNoMany: {fileID: 1889619418}
@@ -1445,11 +1446,11 @@ RectTransform:
   - {fileID: 1445301591}
   - {fileID: 735189889}
   m_Father: {fileID: 383151902}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -341.4, y: -137}
+  m_AnchoredPosition: {x: -378, y: -153}
   m_SizeDelta: {x: -53.700012, y: -11.399994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1246999122
@@ -1573,7 +1574,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1445301595}
-        m_MethodName: ChoiceFurniture
+        m_MethodName: ChooseFurniture
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1634,11 +1635,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8468e554b6518b04584f19e909412ffb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  furniture: {fileID: 21300000, guid: 5c2c0450a6151c94dad3597f1e356a79, type: 3}
-  buttonFurniture: {fileID: 88800608}
+  spriteFurniture: {fileID: 21300000, guid: 5c2c0450a6151c94dad3597f1e356a79, type: 3}
+  furniture: {fileID: 1885429535}
   money: {fileID: 584529225}
   price: {fileID: 1060602446}
   panelNoMany: {fileID: 1889619418}
+--- !u!1 &1885429535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1885429536}
+  - component: {fileID: 1885429538}
+  - component: {fileID: 1885429537}
+  m_Layer: 5
+  m_Name: ImageFurniture
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1885429536
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885429535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 383151902}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -381, y: -52}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1885429537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885429535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 3721805f943981448a6df99642fb25f6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1885429538
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885429535}
+  m_CullTransparentMesh: 0
 --- !u!1 &1889619418
 GameObject:
   m_ObjectHideFlags: 0
