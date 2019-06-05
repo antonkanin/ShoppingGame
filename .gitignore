@@ -12,6 +12,9 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+#builds
+/Build_Win/
+
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
 

@@ -16,6 +16,8 @@ public class CartItem : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("CartItem::Start()");
+
         var cartObject = GameObject.Find("ShoppingCart");
 
         if (cartObject == null)
@@ -24,6 +26,12 @@ public class CartItem : MonoBehaviour
         }
 
         cartManager = cartObject.GetComponent<CartManager>();
+
+        if (cartManager == null)
+        {
+            throw new NullReferenceException("Cannot find CartManager component " +
+                                             "attached to Shopping Cart game object");
+        }
     }
 
     public EShoppingItemType ItemType
@@ -37,7 +45,6 @@ public class CartItem : MonoBehaviour
             {
                 button.interactable = false;
                 itemText.text = "N/A";
-                
             }
             else
             {
@@ -73,6 +80,16 @@ public class CartItem : MonoBehaviour
 
     public void RemoveItem()
     {
-        cartManager.SelectItem(transform.GetSiblingIndex());
+        Debug.Log("CartItem::RemoveItem()");
+
+        if (cartManager != null)
+        {
+            cartManager.SelectItem(transform.GetSiblingIndex());
+        }
+        else
+        {
+            throw new NullReferenceException("cartManager is null, but that should have never happened. " +
+                                             "Only god can help us.");
+        }
     }
 }
