@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
 public class CartManager : MonoBehaviour
 {
     public GameEvent fightModeOnEvent;
+
+    public GameEvent noTargetEvent;
 
     public CartItem[] cartGameObjects;
 
@@ -110,8 +113,6 @@ public class CartManager : MonoBehaviour
 
     public void SelectItem(int position)
     {
-        Debug.Log("Selecting item " + GetItemName(position));
-
         var itemType = GetItemType(position);
 
         if (ItemUtils.IsFightingItem(itemType))
@@ -142,6 +143,11 @@ public class CartManager : MonoBehaviour
             fightingItemPosition = position;
 
             fightModeOnEvent.Raise();
+        }
+        else
+        {
+            Debug.Log("Cart Manager - raising NoTargetEvent");
+            noTargetEvent.Raise();
         }
     }
 

@@ -60,7 +60,6 @@ public class CheckNeighbour : MonoBehaviour
 
         if (hitColliders.Length <= 0)
         {
-            Debug.Log("Cannot find empty slot on the shelf");
             return false;
         }
 
