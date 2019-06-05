@@ -89,7 +89,7 @@ public class CartManager : MonoBehaviour
         cartItemTypes[position] = itemType;
         cartGameObjects[position].ItemType = itemType;
 
-        if (canReturnItemsToShelf || neighbourUtils.IsTowerNearBy())
+        if (canReturnItemsToShelf || ItemUtils.IsFightingItem(itemType))
         {
             cartGameObjects[position].SetCanClick(true);
         }

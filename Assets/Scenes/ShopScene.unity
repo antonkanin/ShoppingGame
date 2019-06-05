@@ -3093,11 +3093,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 914101513751925990, guid: 5693e775f2f051a46acb3efa1cc95b3c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 914101513751925991, guid: 5693e775f2f051a46acb3efa1cc95b3c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4598,6 +4593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: shootingForce
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 914101513751925988, guid: 5693e775f2f051a46acb3efa1cc95b3c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5693e775f2f051a46acb3efa1cc95b3c, type: 3}
@@ -7092,6 +7092,11 @@ PrefabInstance:
         type: 3}
       propertyPath: shootingForce
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 914101513751925988, guid: 5693e775f2f051a46acb3efa1cc95b3c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5693e775f2f051a46acb3efa1cc95b3c, type: 3}
