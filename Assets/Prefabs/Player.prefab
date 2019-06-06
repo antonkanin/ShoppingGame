@@ -101,7 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3976657833958088354}
   m_Layer: 9
-  m_Name: ShoppingCart
+  m_Name: Cart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -16,8 +16,6 @@ public class CartItem : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("CartItem::Start()");
-
         var cartObject = GameObject.Find("ShoppingCart");
 
         if (cartObject == null)
@@ -80,8 +78,6 @@ public class CartItem : MonoBehaviour
 
     public void RemoveItem()
     {
-        Debug.Log("CartItem::RemoveItem()");
-
         if (cartManager != null)
         {
             cartManager.SelectItem(transform.GetSiblingIndex());
