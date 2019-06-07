@@ -8310,7 +8310,7 @@ PrefabInstance:
     - target: {fileID: 2902313248598227655, guid: 0b3949d13080f1d4e8e84fe7a0f2247f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.999878
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 2902313248598227655, guid: 0b3949d13080f1d4e8e84fe7a0f2247f,
         type: 3}
@@ -8591,6 +8591,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902313248188769595, guid: 0b3949d13080f1d4e8e84fe7a0f2247f,
+        type: 3}
+      propertyPath: m_Text
+      value: Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b3949d13080f1d4e8e84fe7a0f2247f, type: 3}
