@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class HitReaction : MonoBehaviour
 {
-    public InputController input;
-
     public float slowDownTime;
+
+    private InputController input;
+
+    private void Start()
+    {
+        input = Utils.FindInputController().GetComponent<InputController>();
+    }
 
     void OnCollisionEnter(Collision other)
     {

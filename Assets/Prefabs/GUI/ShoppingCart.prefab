@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fightModeOnEvent: {fileID: 11400000, guid: 3133cf08341dd0c479b8b89c0043fe20, type: 2}
+  noTargetEvent: {fileID: 11400000, guid: 577697e647cbdc843a9070080be707be, type: 2}
   cartGameObjects:
   - {fileID: 2902313248223770671}
   - {fileID: 2160196785847445932}
